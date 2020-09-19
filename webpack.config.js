@@ -18,6 +18,14 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(css)$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png)$/,
+        use: ['file-loader'],
+      },
     ],
   },
   plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
