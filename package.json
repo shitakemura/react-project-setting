@@ -5,14 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "npx prettier --write 'src/**/*.{js,ts,jsx,tsx}'"
+    "format": "npx prettier --write 'src/**/*.{js,ts,jsx,tsx}'",
+    "lint": "npx eslint 'src/**/*.{ts,tsx}'"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
     "css-loader": "^4.3.0",
+    "eslint": "^7.9.0",
+    "eslint-plugin-react": "^7.20.6",
     "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.4.1",
     "prettier": "^2.1.2",
