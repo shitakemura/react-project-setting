@@ -8,23 +8,18 @@ executors:
 commands:
   notify_slack:
     steps:
-       - slack/status:
+      - slack/status:
           success_message: 'CI Success'
           failure_message: 'CI Failure'
           webhook: '${SLACK_WEBHOOK}'
 jobs:
-  build:
+  unit_test:
     executor: node
     steps:
       - checkout
       - run:
           name: install dependencies
           command: npm install
-  test:
-    executor: node
-    requires:
-      - build
-    steps:
       - run:
           name: unit test
           command: npm test
@@ -33,5 +28,4 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
-      - test
+      - unit_test
